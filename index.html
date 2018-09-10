@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            display: inline-block;
+        }
+
+        .left_form {
+            width: 50%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.js"></script>
+    <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
 </head>
+
 <body>
-    <p>hello!</p>
+    <form id="left_form" class="left_form" action="">
+        <input type="text">
+        <div id="left_list"></div>
+    </form>
+
+    <form id="rigth_form" action="">
+        <input type="text">
+        <div id="rigth_list"></div>
+    </form>
+
+    <!-- js -->
+
+    <script src="script.js"></script>
+
+    <!-- handlebars templates-->
+    <script id="#left_template" type="text/handlebars-template">
+        {{each list}}
+            <div class="friend">
+                <img src={{ photo_100 }}>
+                <div>{{ last_name }}</div>
+                <div>{{ first_name }}</div>
+                <button class="btn">button</button>
+            </div>
+        {{/each}}
+    </script>
+
 </body>
+
 </html>
